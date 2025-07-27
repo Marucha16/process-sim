@@ -1,0 +1,20 @@
+# Pliki Pythona
+__pycache__/
+*.py[cod]
+
+# Środowiska virtualne
+venv/
+.venv/
+env/
+ENV/
+
+# Pliki tymczasowe
+*.log
+
+# Ustawienia edytora
+.vscode/
+.idea/
+
+# Systemowe śmieci
+.DS_Store
+Thumbs.db

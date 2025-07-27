@@ -2,8 +2,10 @@
 Projekt zawiera:
 - FCFS i Round Robin (planowanie procesów)
 - FIFO i LRU (zarządzanie stronami pamięci)
-- Genaratory:
+- 
+Genaratory:
 - -generator.py
 - -generator_stron.py
-- Uruchomienie:
+- 
+Uruchomienie:
 - - main.py

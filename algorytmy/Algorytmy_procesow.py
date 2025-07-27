@@ -1,7 +1,6 @@
 from collections import deque #biblioteka z kolejka
-from generator import procesy #modul z generatorem
+from  generatory.generator import procesy #modul z generatorem
 from copy import deepcopy #do skopiowania listy
-import pandas as pd #importowanie pandas do przysyłania do excel
 koncowy_raportfc = deepcopy(procesy) #kopiowanie
 koncowy_raport= deepcopy(procesy)#kopiowanie
 def fcfs(ilosc):
@@ -62,14 +61,3 @@ def RR(ilosc):
             if(ilosc!=dodatek): #sprawdzenie czy nie wszyslismy poza zakres
                 if(czas >= procesy[dodatek]["czas_przyjscia"]): #w razie gdy procesu maja mozliwosc wejscia do kolejki
                     break
-ilosc=len(procesy) #obliczenie ilosci procesow
-fcfs(ilosc) #FCFS
-RR(ilosc) #Round Robin
-#tu ponizej to dodanie do excel na sprawozdanie
-df1 = pd.DataFrame(koncowy_raportfc)
-df2 = pd.DataFrame(koncowy_raport)
-with pd.ExcelWriter('procesy_raport.xlsx') as writer:
-    df1.to_excel(writer, sheet_name='Raport FCFS', index=False)
-    df2.to_excel(writer, sheet_name='Raport Round Robin', index=False)
-
-print("Dane zostały zapisane do 'procesy_raport.xlsx' z dwoma arkuszami.")

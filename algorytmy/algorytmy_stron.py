@@ -1,6 +1,4 @@
-from os import remove
-import pandas as pd
-from generator_stron import strony
+from generatory.generator_stron import strony
 from collections import deque
 def fifo(ilosc,max_iloscstron):
     bledy_stron=0 #zliczanie bledow stron
@@ -37,14 +35,4 @@ def LRU(ilosc,max_iloscstron):
             kolejka.append(strony[dodatek])#dodanie na konice
         dodatek=dodatek+1 #zmienianie iteracji na kolejna
     return bledy_stron #zwrocenie bledow stron
-ilosc=len(strony) #oblczenie ilosci stron
-max_iloscstron=4 #maksymalna ilosc w pamieci ram
-fifo_bledy=fifo(ilosc,max_iloscstron) #funkcja fifo
-lru_bledy=LRU(ilosc,max_iloscstron) #funkcja LRU
 
-df1 = pd.DataFrame(strony)
-with pd.ExcelWriter('procesy_raport.xlsx') as writer:
-    df1.to_excel(writer, sheet_name='Raport Fifo i LRU', index=False)
-print("Dane zostały zapisane do 'procesy_raport.xlsx' z dwoma arkuszami.")
-print(fifo_bledy)
-print(lru_bledy)

@@ -1,9 +1,9 @@
-# Symulacje algorytmów planowania i zarządzania pamięcią
-## Projekt zawiera:
-- FCFS i Round Robin (planowanie procesów)
-- FIFO i LRU (zarządzanie stronami pamięci)
-## Genaratory:
+# Simulations of Scheduling and Memory Management Algorithms
+## The project includes:
+- FCFS and Round Robin (process scheduling)
+- FIFO and LRU (memory page management)
+## Generators:
 - generator.py
 - generator_stron.py
-## Uruchomienie:
+## Running the project:
 - main.py
